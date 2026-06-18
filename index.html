@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kender Contreras · Consultor de Automatización de Procesos</title>
+<meta name="description" content="Consultor de automatización de procesos en Santiago, Chile. Power BI, Power Automate, Python y SQL para eliminar trabajo manual en PYMEs.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #F7F6F2; --bg-card: #FFFFFF; --text: #111318;
+    --text-muted: #6B7280; --text-faint: #9CA3AF;
+    --accent: #1D4ED8; --accent-light: #EFF6FF;
+    --amber: #D97706; --amber-light: #FFFBEB;
+    --border: #E5E7EB; --border-strong: #D1D5DB;
+    --green: #059669; --green-light: #ECFDF5;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,242,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+  .nav-brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; font-weight: 400; transition: color .15s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta { background: var(--accent); color: white; font-size: 13px; font-weight: 500; padding: 7px 16px; border-radius: 6px; text-decoration: none; transition: background .15s; }
+  .nav-cta:hover { background: #1e40af; }
+
+  .hero { max-width: 780px; margin: 0 auto; padding: 100px 2rem 80px; animation: slideIn .5s ease both; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.75rem; }
+  .hero-eyebrow::before { content: ''; width: 20px; height: 1.5px; background: var(--accent); display: block; }
+  .hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1.1; color: var(--text); margin-bottom: 1.5rem; }
+  .hero h1 em { font-style: normal; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 1px; }
+  .hero-desc { font-size: 17px; color: var(--text-muted); max-width: 560px; line-height: 1.7; margin-bottom: 2.5rem; font-weight: 300; }
+  .hero-desc strong { color: var(--text); font-weight: 500; }
+  .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 2rem; }
+  .btn-primary { background: var(--text); color: var(--bg); font-size: 14px; font-weight: 500; padding: 11px 22px; border-radius: 6px; text-decoration: none; transition: background .15s; }
+  .btn-primary:hover { background: #1f2937; }
+  .btn-ghost { color: var(--text-muted); font-size: 14px; text-decoration: none; font-weight: 400; display: flex; align-items: center; gap: 6px; transition: color .15s; }
+  .btn-ghost:hover { color: var(--text); }
+  .counter-demo { display: inline-flex; align-items: center; gap: 12px; background: var(--amber-light); border: 1px solid #FDE68A; border-radius: 8px; padding: 8px 16px; flex-wrap: wrap; }
+  .counter-from { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-muted); text-decoration: line-through; }
+  .counter-to { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: var(--amber); }
+  .counter-label { font-size: 12px; color: var(--text-muted); }
+
+  .metrics { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-card); }
+  .metrics-inner { max-width: 780px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); padding: 0 2rem; animation: slideIn .5s .1s ease both; }
+  .metric-item { padding: 2.5rem 2rem; border-right: 1px solid var(--border); }
+  .metric-item:first-child { padding-left: 0; }
+  .metric-item:last-child { border-right: none; }
+  .metric-num { font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.4rem; }
+  .metric-num.amber { color: var(--amber); }
+  .metric-num.blue { color: var(--accent); }
+  .metric-num.green { color: var(--green); }
+  .metric-label { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+
+  section { max-width: 780px; margin: 0 auto; padding: 80px 2rem; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; letter-spacing: -0.03em; color: var(--text); margin-bottom: 1rem; line-height: 1.2; }
+  .section-subtitle { font-size: 16px; color: var(--text-muted); max-width: 520px; line-height: 1.7; font-weight: 300; margin-bottom: 3rem; }
+  .section-divider { border: none; border-top: 1px solid var(--border); max-width: 780px; margin: 0 auto; }
+
+  .case-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .case-header { padding: 2rem 2rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+  .case-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 0.75rem; }
+  .case-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; color: var(--text); line-height: 1.3; }
+  .case-meta { font-size: 12px; color: var(--text-faint); margin-top: 0.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+  .result-pill { background: var(--green-light); border: 1px solid #A7F3D0; color: var(--green); font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 20px; white-space: nowrap; align-self: flex-start; }
+  .case-body { padding: 2rem; }
+  .before-after { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin-bottom: 2rem; }
+  .ba-box { padding: 1.25rem; border-radius: 8px; background: var(--bg); border: 1px solid var(--border); }
+  .ba-box.after { background: var(--green-light); border-color: #A7F3D0; }
+  .ba-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .ba-label.before { color: var(--text-faint); }
+  .ba-label.after { color: var(--green); }
+  .ba-value { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.25rem; }
+  .ba-desc { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+  .ba-arrow { font-size: 1.2rem; color: var(--text-faint); text-align: center; }
+  .case-problem { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; padding: 1.25rem; background: var(--bg); border-radius: 8px; border-left: 3px solid var(--border-strong); }
+  .tech-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.5rem; }
+  .tech-tag { font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 4px; background: var(--bg); color: var(--text); border: 1px solid var(--border-strong); }
+
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .service-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; transition: border-color .15s, box-shadow .15s; }
+  .service-card:hover { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+  .service-icon { font-size: 1.5rem; margin-bottom: 1rem; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--accent-light); border-radius: 8px; }
+  .service-name { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.5rem; color: var(--text); }
+  .service-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  .service-tools { margin-top: 1rem; font-size: 11px; color: var(--text-faint); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+  .about-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-light), #DBEAFE); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); margin-bottom: 1.5rem; border: 2px solid var(--border); }
+  .about-name { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 0.5rem; color: var(--text); }
+  .about-title { font-size: 14px; color: var(--accent); font-weight: 500; margin-bottom: 1.5rem; }
+  .about-bio { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; }
+  .about-exp { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .exp-item { padding: 0.75rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; }
+  .exp-company { font-size: 12px; font-weight: 600; color: var(--text); }
+  .exp-role { font-size: 11px; color: var(--text-faint); margin-top: 2px; }
+
+  .cta-section { max-width: 780px; margin: 0 2rem 80px; padding: 3rem 2rem; background: var(--text); border-radius: 16px; text-align: center; }
+  .cta-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 0.75rem; color: #F7F6F2; }
+  .cta-section p { font-size: 15px; color: #9CA3AF; margin-bottom: 2rem; font-weight: 300; }
+  .btn-cta { background: var(--accent); color: white; font-size: 14px; font-weight: 500; padding: 12px 28px; border-radius: 7px; text-decoration: none; display: inline-block; transition: background .15s; }
+  .btn-cta:hover { background: #1e40af; }
+  .cta-note { margin-top: 1rem; font-size: 12px; color: #6B7280; }
+
+  footer { border-top: 1px solid var(--border); padding: 2rem; display: flex; justify-content: space-between; align-items: center; max-width: 780px; margin: 0 auto; font-size: 12px; color: var(--text-faint); }
+  footer a { color: var(--text-muted); text-decoration: none; }
+
+  @keyframes slideIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .metrics-inner { grid-template-columns: 1fr; }
+    .metric-item { border-right: none; border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
+    .services-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .before-after { grid-template-columns: 1fr; }
+    .ba-arrow { transform: rotate(90deg); }
+    .cta-section { margin: 0 1rem 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">Kender<span>.</span>Contreras</a>
+  <div class="nav-links">
+    <a href="#casos">Casos</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#sobre-mi">Sobre mí</a>
+  </div>
+  <a href="#contacto" class="nav-cta">Agendar diagnóstico →</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Consultor de Automatización de Procesos · Santiago, Chile</div>
+  <h1>Menos trabajo manual.<br><em>Más tiempo</em> para lo que importa.</h1>
+  <p class="hero-desc">
+    Transformo procesos repetitivos en flujos automatizados usando <strong>Power BI, Power Automate, Python y SQL</strong> — para que tu equipo deje de perder horas en tareas que una máquina puede hacer mejor.
+  </p>
+  <div class="hero-actions">
+    <a href="#contacto" class="btn-primary">Diagnóstico gratuito (30 min)</a>
+    <a href="#casos" class="btn-ghost">Ver casos reales →</a>
+  </div>
+  <div class="counter-demo">
+    <span class="counter-from">1 semana</span>
+    <span style="color:var(--text-faint)">→</span>
+    <span class="counter-to">1 hora</span>
+    <span class="counter-label">Tiempo de generación de informe · Empresa telecomunicaciones</span>
+  </div>
+</div>
+
+<div class="metrics">
+  <div class="metrics-inner">
+    <div class="metric-item">
+      <div class="metric-num amber">97%</div>
+      <div class="metric-label">Reducción en tiempo de procesamiento en el proyecto más reciente</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num blue">250+</div>
+      <div class="metric-label">Archivos diarios consolidados automáticamente por año</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num green">0 hrs</div>
+      <div class="metric-label">de trabajo manual en procesos ya automatizados</div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<section id="casos">
+  <div class="section-eyebrow">Casos de estudio</div>
+  <h2 class="section-title">Proyectos reales, resultados medibles</h2>
+  <p class="section-subtitle">Cada proyecto parte de un problema concreto. Los resultados se miden en tiempo recuperado y errores eliminados.</p>
+
+  <div class="case-card">
+    <div class="case-header">
+      <div>
+        <div class="case-tag">Automatización · Telecomunicaciones</div>
+        <div class="case-title">Consolidación anual de 250 archivos operacionales para reportes DEM Corporate</div>
+        <div class="case-meta">
+          <span>Power BI · Power Query · Lenguaje M</span>
+          <span>Empresa sector telecomunicaciones</span>
+        </div>
+      </div>
+      <div class="result-pill">↓ 97% tiempo de proceso</div>
+    </div>
+    <div class="case-body">
+      <div class="before-after">
+        <div class="ba-box">
+          <div class="ba-label before">Antes</div>
+          <div class="ba-value" style="color:var(--text-muted)">~1 semana</div>
+          <div class="ba-desc">Consolidación manual en Excel. Proceso se degradaba con el tiempo a medida que crecía el volumen.</div>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-box after">
+          <div class="ba-label after">Después</div>
+          <div class="ba-value" style="color:var(--green)">< 1 hora</div>
+          <div class="ba-desc">Pipeline automatizado en Power Query. Actualización con un clic. Tiempo constante sin importar el volumen.</div>
+        </div>
+      </div>
+      <div class="case-problem">
+        <strong>El problema:</strong> Los archivos diarios llegaban con errores estructurales desde el sistema de extracción — múltiples campos colapsados en una sola columna. El proceso manual en Excel escalaba con el volumen: más archivos, más horas. Al segundo semestre, el informe consumía una semana completa de trabajo dedicado.
+      </div>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;">La solución detecta y corrige automáticamente los registros con error, consolida 250+ archivos desde carpeta, aplica joins entre cuatro fuentes distintas y genera la tabla maestra lista para Power BI — sin intervención manual en los datos.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Power Query</span>
+        <span class="tech-tag">Lenguaje M</span>
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">Folder.Files</span>
+        <span class="tech-tag">Table.NestedJoin</span>
+        <span class="tech-tag">Corrección de errores en origen</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="servicios">
+  <div class="section-eyebrow">Servicios</div>
+  <h2 class="section-title">¿En qué te puedo ayudar?</h2>
+  <p class="section-subtitle">No vendo licencias de IA ni plataformas costosas. Uso las herramientas que tu empresa probablemente ya tiene — y las hago trabajar mejor.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <div class="service-name">Dashboards e informes automáticos</div>
+      <div class="service-desc">Reportes que se actualizan solos. Indicadores en tiempo real para tomar decisiones sin esperar al analista.</div>
+      <div class="service-tools">Power BI · Power Query</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <div class="service-name">Automatización de procesos</div>
+      <div class="service-desc">Flujos que eliminan el trabajo repetitivo: consolidación de archivos, validaciones, envíos automáticos, notificaciones.</div>
+      <div class="service-tools">Power Automate · Python · SQL</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔍</div>
+      <div class="service-name">Diagnóstico de procesos</div>
+      <div class="service-desc">Identifico los puntos de mayor pérdida de tiempo en tu operación y te entrego un plan de automatización priorizado.</div>
+      <div class="service-tools">30 min · Sin costo · Sin compromiso</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="sobre-mi">
+  <div class="about-grid">
+    <div>
+      <div class="about-avatar">KC</div>
+      <div class="about-name">Kender Contreras</div>
+      <div class="about-title">Consultor de Automatización de Procesos</div>
+      <div class="about-bio">Analista de datos con experiencia en empresas de telecomunicaciones y factoring. Especializado en convertir procesos manuales en flujos automatizados usando herramientas de Microsoft y Python.</div>
+      <div class="about-exp">
+        <div class="exp-item">
+          <div class="exp-company">Telefónica Empresas</div>
+          <div class="exp-role">Analista de datos</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-company">Sector Factoring</div>
+          <div class="exp-role">BI & Procesos</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem;font-weight:300;">Trabajo con empresas que saben que sus procesos pueden funcionar mejor, pero no tienen un equipo de tecnología interno para hacerlo.</p>
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem;font-weight:300;">Mi enfoque no es vender plataformas de IA costosas. Es aprovechar las herramientas que ya tienen — Excel, Power BI, correo, sistemas internos — y hacer que trabajen juntas de forma automática.</p>
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.8;font-weight:300;">El resultado es siempre el mismo: <strong style="color:var(--text)">menos horas en tareas mecánicas, más tiempo para las decisiones que importan.</strong></p>
+    </div>
+  </div>
+</section>
+
+<div id="contacto" class="cta-section">
+  <h2>¿Tu equipo pierde horas en procesos manuales?</h2>
+  <p>En 30 minutos identifico el proceso que más tiempo te consume y te explico cómo automatizarlo.</p>
+  <a href="mailto:tu@email.com" class="btn-cta">Agendar diagnóstico gratuito</a>
+  <p class="cta-note">Sin costo · Sin compromiso · Respuesta en menos de 24 horas</p>
+</div>
+
+<footer>
+  <span>© 2025 Kender Contreras · Santiago, Chile</span>
+  <div style="display:flex;gap:1.5rem;">
+    <a href="https://linkedin.com/in/kendercontreras" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Kendercontreras" target="_blank">GitHub</a>
+  </div>
+</footer>
+
+</body>
+</html>
