@@ -218,6 +218,59 @@
       </div>
     </div>
   </div>
+
+   <div style="margin-top: 1.5rem;" class="case-card">
+    <div class="case-header">
+      <div>
+        <div class="case-tag">Reingeniería ETL · Telecomunicaciones · Logística</div>
+        <div class="case-title">De 4 pasos manuales semanales a 1 clic:<br>Unificación del pipeline de órdenes logísticas</div>
+        <div class="case-meta">
+          <span>Power BI · Power Query · Lenguaje M · Motor VertiPaq</span>
+          <span>Empresa sector telecomunicaciones</span>
+        </div>
+      </div>
+      <div class="result-pill">↓ 92% tiempo de actualización</div>
+    </div>
+    <div class="case-body">
+      <div class="before-after">
+        <div class="ba-box">
+          <div class="ba-label before">Antes</div>
+          <div class="ba-value" style="color:var(--text-muted)">3 horas</div>
+          <div class="ba-desc">2 archivos .pbix en cadena + exportaciones manuales a Excel vía DAX Studio cada semana.</div>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-box after">
+          <div class="ba-label after">Después</div>
+          <div class="ba-value" style="color:var(--green)">15 min</div>
+          <div class="ba-desc">1 solo modelo unificado. Actualización completa con un clic. Cero exportaciones intermedias.</div>
+        </div>
+      </div>
+      <div class="case-problem">
+        <strong>El problema:</strong> El modelo procesaba archivos diarios de órdenes de despacho en dos etapas separadas: un primer .pbix consolidaba el mes en curso y lo exportaba a Excel vía DAX Studio ("Enero.xlsx", "Febrero.xlsx"...), y un segundo .pbix cargaba esos Excel para construir el consolidado anual. Cada semana había que ejecutar ambos en secuencia, exportar manualmente entre ellos, y gestionar la coherencia entre archivos. Con el tiempo, el proceso acumuló deuda técnica: 4 etapas manuales, archivos redundantes y riesgo constante de error humano.
+      </div>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1rem;">La solución reemplazó los dos modelos por un pipeline unificado bajo el concepto de <strong style="color:var(--text)">Única Fuente de la Verdad</strong>. Un motor de reglas de negocio contrasta automáticamente el historial con el estado actual de cada orden: si una orden cambia de estado, el sistema descarta el registro antiguo y conserva el más reciente — sin intervención humana. Se eliminaron DAX Studio, los Excel intermedios y las exportaciones manuales.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem;">
+        <div style="padding:1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-faint);margin-bottom:0.5rem;">Antes — 4 etapas manuales</div>
+          <div style="font-size:12px;color:var(--text-muted);line-height:1.8;">1. Actualizar .pbix mensual<br>2. Exportar a Excel vía DAX Studio<br>3. Abrir .pbix anual<br>4. Actualizar y verificar coherencia</div>
+        </div>
+        <div style="padding:1rem;background:var(--green-light);border:1px solid #A7F3D0;border-radius:8px;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);margin-bottom:0.5rem;">Después — 0 etapas manuales</div>
+          <div style="font-size:12px;color:var(--text-muted);line-height:1.8;">1. Clic en "Actualizar"<br><br><br><br></div>
+        </div>
+      </div>
+      <div class="tech-stack">
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">Power Query</span>
+        <span class="tech-tag">Lenguaje M</span>
+        <span class="tech-tag">Motor VertiPaq</span>
+        <span class="tech-tag">Table.Group</span>
+        <span class="tech-tag">Lógica incremental</span>
+        <span class="tech-tag">Sanitización de datos</span>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <hr class="section-divider">
@@ -274,6 +327,7 @@
       <p style="font-size:15px;color:var(--text-muted);line-height:1.8;font-weight:300;">El resultado es siempre el mismo: <strong style="color:var(--text)">menos horas en tareas mecánicas, más tiempo para las decisiones que importan.</strong></p>
     </div>
   </div>
+ 
 </section>
 
 <div id="contacto" class="cta-section">
