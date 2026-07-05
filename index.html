@@ -40,11 +40,19 @@
   .btn-primary:hover { background: #1f2937; }
   .btn-ghost { color: var(--text-muted); font-size: 14px; text-decoration: none; font-weight: 400; display: flex; align-items: center; gap: 6px; transition: color .15s; }
   .btn-ghost:hover { color: var(--text); }
-  .counter-demo { display: inline-flex; align-items: center; gap: 12px; background: var(--amber-light); border: 1px solid #FDE68A; border-radius: 8px; padding: 8px 16px; flex-wrap: wrap; }
-  .counter-from { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-muted); text-decoration: line-through; }
-  .counter-to { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: var(--amber); }
-  .counter-label { font-size: 12px; color: var(--text-muted); }
 
+  /* ── HERO COUNTER ANIMADO ── */
+  .hero-counter { display: inline-flex; align-items: center; gap: 14px; background: var(--amber-light); border: 1px solid #FDE68A; border-radius: 10px; padding: 10px 18px; flex-wrap: wrap; margin-top: 0.5rem; }
+  .counter-block { display: flex; flex-direction: column; align-items: center; min-width: 64px; }
+  .counter-value { font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; font-weight: 700; line-height: 1; transition: all .3s ease; }
+  .counter-value.counting { transform: translateY(-4px); opacity: 0.6; }
+  .counter-unit { font-size: 11px; font-weight: 500; color: var(--text-muted); margin-top: 2px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .counter-from-val { color: var(--text-muted); text-decoration: line-through; }
+  .counter-to-val { color: var(--amber); }
+  .counter-arrow { font-size: 1.2rem; color: var(--text-faint); align-self: center; margin-bottom: 14px; }
+  .counter-caption { font-size: 12px; color: var(--text-muted); align-self: center; max-width: 220px; line-height: 1.4; }
+
+  /* ── METRICS ── */
   .metrics { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-card); }
   .metrics-inner { max-width: 780px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); padding: 0 2rem; animation: slideIn .5s .1s ease both; }
   .metric-item { padding: 2.5rem 2rem; border-right: 1px solid var(--border); }
@@ -62,12 +70,22 @@
   .section-subtitle { font-size: 16px; color: var(--text-muted); max-width: 520px; line-height: 1.7; font-weight: 300; margin-bottom: 3rem; }
   .section-divider { border: none; border-top: 1px solid var(--border); max-width: 780px; margin: 0 auto; }
 
+  /* ── CASE CARDS ── */
   .case-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
   .case-header { padding: 2rem 2rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
   .case-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 0.75rem; }
   .case-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; color: var(--text); line-height: 1.3; }
   .case-meta { font-size: 12px; color: var(--text-faint); margin-top: 0.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
-  .result-pill { background: var(--green-light); border: 1px solid #A7F3D0; color: var(--green); font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 20px; white-space: nowrap; align-self: flex-start; }
+
+  /* ── RESULT PILL + PROGRESS BAR ── */
+  .result-block { display: flex; flex-direction: column; gap: 6px; align-self: flex-start; min-width: 140px; }
+  .result-pill { background: var(--green-light); border: 1px solid #A7F3D0; color: var(--green); font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 20px; white-space: nowrap; text-align: center; }
+  .progress-wrap { display: flex; flex-direction: column; gap: 3px; }
+  .progress-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-faint); font-weight: 500; }
+  .progress-track { height: 6px; border-radius: 3px; background: #E5E7EB; overflow: hidden; position: relative; }
+  .progress-fill { height: 100%; border-radius: 3px; background: var(--green); width: 0; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+  .progress-fill.amber-fill { background: var(--amber); }
+
   .case-body { padding: 2rem; }
   .before-after { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin-bottom: 2rem; }
   .ba-box { padding: 1.25rem; border-radius: 8px; background: var(--bg); border: 1px solid var(--border); }
@@ -82,6 +100,29 @@
   .tech-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.5rem; }
   .tech-tag { font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 4px; background: var(--bg); color: var(--text); border: 1px solid var(--border-strong); }
 
+  /* ── FLOW DIAGRAM (Orquestador) ── */
+  .flow-diagram { margin: 1.5rem 0; padding: 1.5rem; background: #0D1117; border-radius: 10px; overflow-x: auto; }
+  .flow-diagram-inner { display: flex; align-items: center; gap: 0; min-width: 580px; justify-content: center; }
+  .flow-group { display: flex; flex-direction: column; gap: 6px; }
+  .flow-node { display: flex; align-items: center; gap: 6px; background: #161B22; border: 1px solid #30363D; border-radius: 6px; padding: 6px 10px; font-size: 11px; font-weight: 500; color: #C9D1D9; white-space: nowrap; transition: border-color .3s, box-shadow .3s; }
+  .flow-node.source { border-color: #1D4ED8; color: #93C5FD; }
+  .flow-node.process { border-color: #D97706; color: #FCD34D; background: #1C1407; border-width: 2px; font-size: 12px; padding: 10px 14px; }
+  .flow-node.output { border-color: #059669; color: #6EE7B7; }
+  .flow-node.pulse { animation: nodePulse 2s ease-in-out infinite; }
+  .flow-arrow { display: flex; align-items: center; padding: 0 8px; color: #484F58; font-size: 18px; flex-shrink: 0; }
+  .flow-label { font-size: 10px; color: #484F58; text-align: center; margin-top: 4px; letter-spacing: 0.06em; text-transform: uppercase; }
+  @keyframes nodePulse { 0%,100% { box-shadow: 0 0 0 0 rgba(217,119,6,0); } 50% { box-shadow: 0 0 0 4px rgba(217,119,6,0.2); } }
+  .flow-connector { width: 2px; height: 12px; background: #30363D; margin: 0 auto; }
+
+  /* ── TECH STACK VISUAL (Servicios) ── */
+  .stack-visual { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+  .stack-visual-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 1rem; }
+  .stack-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .stack-item { display: flex; align-items: center; gap: 7px; padding: 7px 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; font-size: 12px; font-weight: 500; color: var(--text); transition: border-color .15s, box-shadow .15s; cursor: default; }
+  .stack-item:hover { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+  .stack-icon { font-size: 16px; }
+
+  /* ── SERVICES ── */
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
   .service-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; transition: border-color .15s, box-shadow .15s; }
   .service-card:hover { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
@@ -90,6 +131,7 @@
   .service-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
   .service-tools { margin-top: 1rem; font-size: 11px; color: var(--text-faint); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
 
+  /* ── ABOUT ── */
   .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
   .about-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-light), #DBEAFE); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); margin-bottom: 1.5rem; border: 2px solid var(--border); }
   .about-name { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 0.5rem; color: var(--text); }
@@ -100,6 +142,7 @@
   .exp-company { font-size: 12px; font-weight: 600; color: var(--text); }
   .exp-role { font-size: 11px; color: var(--text-faint); margin-top: 2px; }
 
+  /* ── CTA ── */
   .cta-section { max-width: 780px; margin: 0 2rem 80px; padding: 3rem 2rem; background: var(--text); border-radius: 16px; text-align: center; }
   .cta-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 0.75rem; color: #F7F6F2; }
   .cta-section p { font-size: 15px; color: #9CA3AF; margin-bottom: 2rem; font-weight: 300; }
@@ -112,6 +155,66 @@
 
   @keyframes slideIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
+  /* ── DASHBOARD ── */
+  .dashboard-wrap { background: #0D1117; padding: 2.5rem 2rem; }
+  .dashboard-inner { max-width: 780px; margin: 0 auto; }
+  .dash-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem; }
+  .dash-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #484F58; display: block; margin-bottom: 0.25rem; }
+  .dash-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 600; color: #C9D1D9; letter-spacing: -0.02em; }
+  .dash-live { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #059669; font-weight: 500; background: #0D2818; border: 1px solid #155724; border-radius: 20px; padding: 4px 10px; }
+  .dash-dot { width: 6px; height: 6px; border-radius: 50%; background: #059669; animation: blink 1.5s ease-in-out infinite; flex-shrink: 0; }
+  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  /* KPIs */
+  .dash-kpis { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: #21262D; border-radius: 10px; overflow: hidden; margin-bottom: 1rem; }
+  .dash-kpi { background: #161B22; padding: 1.25rem 1rem; }
+  .dash-kpi-value { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.5rem; }
+  .dash-kpi-value.amber { color: #F59E0B; }
+  .dash-kpi-value.blue { color: #60A5FA; }
+  .dash-kpi-value.green { color: #34D399; }
+  .dash-kpi-value.purple { color: #A78BFA; }
+  .dash-kpi-label { font-size: 11px; color: #6B7280; line-height: 1.4; }
+  .dash-kpi-label span { color: #484F58; font-size: 10px; }
+
+  /* Charts row */
+  .dash-charts { display: grid; grid-template-columns: 1fr 300px; gap: 1rem; }
+  .dash-card { background: #161B22; border: 1px solid #21262D; border-radius: 8px; padding: 1rem 1.25rem; }
+  .dash-card-title { font-size: 11px; font-weight: 600; color: #8B949E; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
+
+  /* Bar chart */
+  .dash-bar-chart { display: flex; flex-direction: column; gap: 10px; }
+  .dash-bar-row { display: flex; align-items: center; gap: 8px; }
+  .dash-bar-label { font-size: 11px; color: #8B949E; min-width: 140px; flex-shrink: 0; }
+  .dash-bar-track { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+  .dash-bar-before { height: 8px; border-radius: 3px; background: #3B4048; width: 0; transition: width 1s ease; display: flex; align-items: center; padding-left: 4px; font-size: 9px; color: #6B7280; overflow: visible; white-space: nowrap; position: relative; }
+  .dash-bar-after { height: 8px; border-radius: 3px; background: #059669; width: 0; transition: width 1s .3s ease; display: flex; align-items: center; padding-left: 4px; font-size: 9px; color: #34D399; overflow: visible; white-space: nowrap; position: relative; }
+  .dash-bar-before::after { content: attr(data-label); position: absolute; left: calc(100% + 4px); font-size: 9px; color: #6B7280; white-space: nowrap; }
+  .dash-bar-after::after { content: attr(data-label); position: absolute; left: calc(100% + 4px); font-size: 9px; color: #34D399; white-space: nowrap; }
+  .dash-legend { display: flex; gap: 1rem; margin-top: 0.5rem; }
+  .legend-before { font-size: 10px; color: #6B7280; }
+  .legend-after { font-size: 10px; color: #34D399; }
+
+  /* Right column */
+  .dash-right-col { display: flex; flex-direction: column; gap: 1rem; }
+
+  /* Donut */
+  .dash-donut-wrap { display: flex; align-items: center; gap: 1rem; }
+  .dash-donut-svg { width: 80px; height: 80px; transform: rotate(-90deg); flex-shrink: 0; }
+  .donut-seg { transition: stroke-dasharray 1s ease; }
+  .donut-legend { display: flex; flex-direction: column; gap: 6px; }
+  .donut-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #8B949E; }
+  .donut-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .blue-dot { background: #1D4ED8; }
+  .green-dot { background: #059669; }
+
+  /* Tool bars */
+  .dash-tools { display: flex; flex-direction: column; gap: 8px; }
+  .dash-tool-row { display: flex; align-items: center; gap: 8px; }
+  .dash-tool-name { font-size: 11px; color: #8B949E; min-width: 110px; flex-shrink: 0; }
+  .dash-tool-bar { flex: 1; height: 5px; background: #21262D; border-radius: 3px; overflow: hidden; }
+  .dash-tool-fill { height: 100%; border-radius: 3px; width: 0; transition: width 1s ease; }
+  .dash-tool-count { font-size: 10px; color: #484F58; white-space: nowrap; min-width: 55px; text-align: right; }
+
   @media (max-width: 640px) {
     .nav-links { display: none; }
     .metrics-inner { grid-template-columns: 1fr; }
@@ -121,6 +224,11 @@
     .before-after { grid-template-columns: 1fr; }
     .ba-arrow { transform: rotate(90deg); }
     .cta-section { margin: 0 1rem 60px; }
+    .result-block { min-width: unset; }
+    .dash-kpis { grid-template-columns: 1fr 1fr; }
+    .dash-charts { grid-template-columns: 1fr; }
+    .dash-bar-label { min-width: 100px; font-size: 10px; }
+    .dash-right-col { display: none; }
   }
 </style>
 </head>
@@ -146,28 +254,140 @@
     <a href="#contacto" class="btn-primary">Diagnóstico gratuito (30 min)</a>
     <a href="#casos" class="btn-ghost">Ver casos reales →</a>
   </div>
-  <div class="counter-demo">
-    <span class="counter-from">1 semana</span>
-    <span style="color:var(--text-faint)">→</span>
-    <span class="counter-to">1 hora</span>
-    <span class="counter-label">Tiempo de generación de informe · Empresa telecomunicaciones</span>
+
+  <!-- CONTADOR ANIMADO -->
+  <div class="hero-counter">
+    <div class="counter-block">
+      <div class="counter-value counter-from-val" id="counterFrom">7 días</div>
+      <div class="counter-unit">antes</div>
+    </div>
+    <div class="counter-arrow">→</div>
+    <div class="counter-block">
+      <div class="counter-value counter-to-val" id="counterTo">1 hora</div>
+      <div class="counter-unit">después</div>
+    </div>
+    <div class="counter-caption">Tiempo de generación de informe · Empresa telecomunicaciones</div>
   </div>
 </div>
 
-<div class="metrics">
-  <div class="metrics-inner">
-    <div class="metric-item">
-      <div class="metric-num amber">6</div>
-      <div class="metric-label">Proyectos reales documentados en telecomunicaciones y factoring</div>
+<!-- ── DASHBOARD DE IMPACTO ── -->
+<div class="dashboard-wrap">
+  <div class="dashboard-inner">
+
+    <div class="dash-header">
+      <div class="dash-title-block">
+        <span class="dash-eyebrow">Resumen de impacto</span>
+        <h2 class="dash-title">Resultados acumulados · 6 proyectos</h2>
+      </div>
+      <div class="dash-live"><span class="dash-dot"></span>Datos reales</div>
     </div>
-    <div class="metric-item">
-      <div class="metric-num blue">+3 hrs</div>
-      <div class="metric-label">diarias liberadas en el proyecto de mayor impacto operacional</div>
+
+    <!-- FILA 1: KPIs principales -->
+    <div class="dash-kpis">
+      <div class="dash-kpi">
+        <div class="dash-kpi-value amber" id="kpi1">0</div>
+        <div class="dash-kpi-label">Horas/día liberadas<br><span>proyecto de mayor impacto</span></div>
+      </div>
+      <div class="dash-kpi">
+        <div class="dash-kpi-value blue" id="kpi2">0<span style="font-size:1.2rem">%</span></div>
+        <div class="dash-kpi-label">Reducción promedio<br><span>tiempo de procesamiento</span></div>
+      </div>
+      <div class="dash-kpi">
+        <div class="dash-kpi-value green" id="kpi3">0</div>
+        <div class="dash-kpi-label">Proyectos documentados<br><span>2 industrias</span></div>
+      </div>
+      <div class="dash-kpi">
+        <div class="dash-kpi-value purple" id="kpi4">0</div>
+        <div class="dash-kpi-label">Scripts automatizados<br><span>solo en el orquestador</span></div>
+      </div>
     </div>
-    <div class="metric-item">
-      <div class="metric-num green">97%</div>
-      <div class="metric-label">Reducción promedio de tiempo en procesos automatizados</div>
+
+    <!-- FILA 2: Gráfico de barras + dona -->
+    <div class="dash-charts">
+
+      <!-- Gráfico de barras: antes vs después por proyecto -->
+      <div class="dash-card dash-bar-card">
+        <div class="dash-card-title">Tiempo de proceso · Antes vs Después</div>
+        <div class="dash-bar-chart">
+          <div class="dash-bar-row">
+            <div class="dash-bar-label">Orquestador Python</div>
+            <div class="dash-bar-track">
+              <div class="dash-bar-before" style="--w:100%">+3 hrs/día</div>
+              <div class="dash-bar-after" style="--w:0%">0 min</div>
+            </div>
+          </div>
+          <div class="dash-bar-row">
+            <div class="dash-bar-label">Conciliación Factoring</div>
+            <div class="dash-bar-track">
+              <div class="dash-bar-before" style="--w:100%">4 hrs/día</div>
+              <div class="dash-bar-after" style="--w:2%">&lt;3 min</div>
+            </div>
+          </div>
+          <div class="dash-bar-row">
+            <div class="dash-bar-label">Reingeniería ETL</div>
+            <div class="dash-bar-track">
+              <div class="dash-bar-before" style="--w:100%">3 hrs</div>
+              <div class="dash-bar-after" style="--w:8%">15 min</div>
+            </div>
+          </div>
+          <div class="dash-bar-row">
+            <div class="dash-bar-label">Consolidación 250 arch.</div>
+            <div class="dash-bar-track">
+              <div class="dash-bar-before" style="--w:100%">1 semana</div>
+              <div class="dash-bar-after" style="--w:3%">&lt;1 hora</div>
+            </div>
+          </div>
+          <div class="dash-bar-row">
+            <div class="dash-bar-label">Operaciones Factoring</div>
+            <div class="dash-bar-track">
+              <div class="dash-bar-before" style="--w:65%">20 min</div>
+              <div class="dash-bar-after" style="--w:16%">5 min</div>
+            </div>
+          </div>
+          <div class="dash-legend">
+            <span class="legend-before">■ Antes</span>
+            <span class="legend-after">■ Después</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: dona + tabla de herramientas -->
+      <div class="dash-right-col">
+
+        <!-- Dona: distribución por industria -->
+        <div class="dash-card dash-donut-card">
+          <div class="dash-card-title">Distribución por industria</div>
+          <div class="dash-donut-wrap">
+            <svg viewBox="0 0 100 100" class="dash-donut-svg">
+              <!-- Telecom: 3 de 6 = 50% -->
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#1D4ED8" stroke-width="14"
+                stroke-dasharray="119.4 238.8" stroke-dashoffset="0" class="donut-seg"/>
+              <!-- Factoring: 3 de 6 = 50% -->
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#059669" stroke-width="14"
+                stroke-dasharray="119.4 238.8" stroke-dashoffset="-119.4" class="donut-seg"/>
+              <text x="50" y="47" text-anchor="middle" font-size="11" font-weight="700" fill="#111318">6</text>
+              <text x="50" y="57" text-anchor="middle" font-size="7" fill="#6B7280">proyectos</text>
+            </svg>
+            <div class="donut-legend">
+              <div class="donut-item"><span class="donut-dot blue-dot"></span>Telecomunicaciones (3)</div>
+              <div class="donut-item"><span class="donut-dot green-dot"></span>Factoring (3)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stack de herramientas usado -->
+        <div class="dash-card">
+          <div class="dash-card-title">Herramientas aplicadas</div>
+          <div class="dash-tools">
+            <div class="dash-tool-row"><span class="dash-tool-name">Power BI / Power Query</span><div class="dash-tool-bar"><div class="dash-tool-fill" data-w="80" style="background:#1D4ED8"></div></div><span class="dash-tool-count">4 proyectos</span></div>
+            <div class="dash-tool-row"><span class="dash-tool-name">Python</span><div class="dash-tool-bar"><div class="dash-tool-fill" data-w="40" style="background:#D97706"></div></div><span class="dash-tool-count">1 proyecto</span></div>
+            <div class="dash-tool-row"><span class="dash-tool-name">Google Apps Script</span><div class="dash-tool-bar"><div class="dash-tool-fill" data-w="40" style="background:#059669"></div></div><span class="dash-tool-count">2 proyectos</span></div>
+          </div>
+        </div>
+
+      </div>
     </div>
+
   </div>
 </div>
 
@@ -178,6 +398,7 @@
   <h2 class="section-title">Proyectos reales, resultados medibles</h2>
   <p class="section-subtitle">Cada proyecto parte de un problema concreto. Los resultados se miden en tiempo recuperado y errores eliminados.</p>
 
+  <!-- CASO 1: Orquestador Python -->
   <div class="case-card">
     <div class="case-header">
       <div>
@@ -188,7 +409,13 @@
           <span>Empresa sector telecomunicaciones</span>
         </div>
       </div>
-      <div class="result-pill">+3 hrs/día liberadas</div>
+      <div class="result-block">
+        <div class="result-pill">+3 hrs/día liberadas</div>
+        <div class="progress-wrap">
+          <div class="progress-labels"><span>Antes</span><span>100% reducido</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="100"></div></div>
+        </div>
+      </div>
     </div>
     <div class="case-body">
       <div class="before-after">
@@ -207,41 +434,66 @@
       <div class="case-problem">
         <strong>El problema:</strong> El equipo de operaciones dedicaba más de 3 horas diarias a una secuencia fija de tareas repetitivas: conectarse a servidores FTP y SFTP para descargar reportes, escanear la bandeja de Outlook para extraer archivos adjuntos de correos específicos, actualizar modelos de Power Query en Excel, registrar solicitudes de anulación detectando órdenes en el cuerpo de correos, y generar y enviar reportes diarios con tablas pegadas directamente en el correo. Cada tarea dependía de que la anterior estuviera completa — y todas requerían presencia humana.
       </div>
-      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">Diseñé un sistema de 13 scripts Python independientes, cada uno responsable de una tarea específica, unificados en un orquestador central que los ejecuta en secuencia y en horario automático. Los scripts cubren:</p>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">Diseñé un sistema de 13 scripts Python independientes, cada uno responsable de una tarea específica, unificados en un orquestador central que los ejecuta en secuencia y en horario automático.</p>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:1.25rem;">
-        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
-          📥 <strong style="color:var(--text)">Descargas FTP/SFTP</strong><br>Extracción automática de reportes desde servidores remotos con lógica delta (solo archivos nuevos)
-        </div>
-        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
-          📧 <strong style="color:var(--text)">Monitoreo de Outlook</strong><br>Escaneo de bandeja, extracción de adjuntos y marcado de correos leídos por remitente y asunto
-        </div>
-        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
-          🤖 <strong style="color:var(--text)">Gestión inteligente de anulaciones</strong><br>Detecta órdenes en el cuerpo de correos con regex, clasifica el motivo con diccionario de reglas y responde automáticamente
-        </div>
-        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
-          📊 <strong style="color:var(--text)">Actualización y despacho de reportes</strong><br>Refresca Power Query en Excel, actualiza tablas dinámicas y genera el correo diario con las tablas pegadas
+      <!-- DIAGRAMA DE FLUJO -->
+      <div class="flow-diagram">
+        <div class="flow-diagram-inner">
+          <div class="flow-group">
+            <div class="flow-node source">🖥️ FTP Cristian</div>
+            <div class="flow-connector"></div>
+            <div class="flow-node source">🔒 SFTP BI</div>
+            <div class="flow-connector"></div>
+            <div class="flow-node source">📧 Outlook</div>
+            <div class="flow-connector"></div>
+            <div class="flow-node source">📁 Base RDA</div>
+            <div class="flow-label">Fuentes</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-group" style="align-items:center;">
+            <div class="flow-node process pulse">⚙️ Orquestador<br><span style="font-size:10px;opacity:0.7">13 scripts · scheduler</span></div>
+            <div class="flow-label">Automatización</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-group">
+            <div class="flow-node output">📊 Reporte Diario</div>
+            <div class="flow-connector"></div>
+            <div class="flow-node output">✅ Anulaciones registradas</div>
+            <div class="flow-connector"></div>
+            <div class="flow-node output">📨 Correo enviado</div>
+            <div class="flow-connector"></div>
+            <div class="flow-node output">🗂️ Archivos descargados</div>
+            <div class="flow-label">Outputs</div>
+          </div>
         </div>
       </div>
 
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:1.25rem;">
+        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+          📥 <strong style="color:var(--text)">Descargas FTP/SFTP</strong><br>Extracción automática con lógica delta (solo archivos nuevos)
+        </div>
+        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+          📧 <strong style="color:var(--text)">Monitoreo de Outlook</strong><br>Escaneo de bandeja, extracción de adjuntos y marcado de correos
+        </div>
+        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+          🤖 <strong style="color:var(--text)">Gestión de anulaciones</strong><br>Detecta órdenes con regex, clasifica motivo y responde automáticamente
+        </div>
+        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+          📊 <strong style="color:var(--text)">Despacho de reportes</strong><br>Refresca Power Query, actualiza tablas dinámicas y genera correo diario
+        </div>
+      </div>
       <p style="font-size:13px;color:var(--text-muted);line-height:1.6;padding:10px 14px;background:var(--amber-light);border:1px solid #FDE68A;border-radius:6px;margin-bottom:1.25rem;">
-        <strong style="color:var(--amber)">Detalle técnico destacado:</strong> El script de gestión de anulaciones usa expresiones regulares para extraer números de orden del cuerpo del correo, aplica lógica de contexto para descartar órdenes que "ya avanzaron" (no deben anularse), clasifica el motivo automáticamente con un diccionario de 30+ reglas de negocio, registra en Excel y genera una respuesta personalizada por nombre — todo sin intervención humana.
+        <strong style="color:var(--amber)">Detalle técnico:</strong> El script de anulaciones usa regex para extraer números de orden, lógica de contexto para descartar órdenes que "ya avanzaron", clasifica el motivo con 30+ reglas de negocio y genera respuesta personalizada por nombre — todo automáticamente.
       </p>
-
       <div class="tech-stack">
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">win32com</span>
-        <span class="tech-tag">paramiko (SFTP)</span>
-        <span class="tech-tag">ftplib (FTP)</span>
-        <span class="tech-tag">pandas</span>
-        <span class="tech-tag">Automatización Outlook</span>
-        <span class="tech-tag">Automatización Excel</span>
-        <span class="tech-tag">Regex</span>
-        <span class="tech-tag">Orquestador con scheduler</span>
+        <span class="tech-tag">Python</span><span class="tech-tag">win32com</span><span class="tech-tag">paramiko (SFTP)</span>
+        <span class="tech-tag">ftplib (FTP)</span><span class="tech-tag">pandas</span><span class="tech-tag">Automatización Outlook</span>
+        <span class="tech-tag">Automatización Excel</span><span class="tech-tag">Regex</span><span class="tech-tag">Orquestador con scheduler</span>
       </div>
     </div>
   </div>
 
+  <!-- CASO 2: Conciliación Factoring -->
   <div style="margin-top: 1.5rem;" class="case-card">
     <div class="case-header">
       <div>
@@ -252,7 +504,13 @@
           <span>Empresa sector Factoring</span>
         </div>
       </div>
-      <div class="result-pill">↓ 98% tiempo de proceso</div>
+      <div class="result-block">
+        <div class="result-pill">↓ 98% tiempo de proceso</div>
+        <div class="progress-wrap">
+          <div class="progress-labels"><span>Antes</span><span>98% reducido</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="98"></div></div>
+        </div>
+      </div>
     </div>
     <div class="case-body">
       <div class="before-after">
@@ -269,21 +527,18 @@
         </div>
       </div>
       <div class="case-problem">
-        <strong>El problema:</strong> El proceso conciliaba diariamente lo que la empresa debía cobrar y pagar (Factoring y Confirming) contra lo efectivamente procesado en bancos y gestiones comerciales — cruzando <strong>8 fuentes de datos distintas</strong> entre archivos locales y planillas en Google Sheets. Hacerlo en Excel significaba abrir los 8 archivos, construir llaves compuestas manuales (RUT + monto + número de cuenta) limpiando espacios uno por uno, y escribir fórmulas anidadas con múltiples condiciones para decidir qué justificación de pago aplicaba primero. Con miles de filas, Excel se volvía lento, se congelaba, y el riesgo de error de digitación era constante.
+        <strong>El problema:</strong> El proceso conciliaba diariamente lo que la empresa debía cobrar y pagar (Factoring y Confirming) contra lo efectivamente procesado en bancos y gestiones comerciales — cruzando <strong>8 fuentes de datos distintas</strong> entre archivos locales y planillas en Google Sheets. Hacerlo en Excel significaba abrir los 8 archivos, construir llaves compuestas manuales limpiando espacios uno por uno, y escribir fórmulas anidadas con múltiples condiciones para decidir qué justificación de pago aplicaba primero. Con miles de filas, Excel se congelaba y el riesgo de error era constante.
       </div>
-      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1rem;">La solución migró toda la lógica a Power BI, consolidando las 8 fuentes —locales y en la nube— en un solo modelo. El motor procesa miles de filas en memoria RAM, aplicando automáticamente las reglas de prioridad de justificación de pago (gestiones de ingreso, condonaciones, neteos, operaciones de mesa en CLP y USD). Cuando la regla de negocio cambia, se actualiza en una sola línea de código M en vez de reescribir fórmulas en miles de celdas.</p>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1rem;">La solución migró toda la lógica a Power BI, consolidando las 8 fuentes en un solo modelo. Cuando la regla de negocio cambia, se actualiza en una sola línea de código M en vez de reescribir fórmulas en miles de celdas.</p>
       <div class="tech-stack">
-        <span class="tech-tag">Power BI</span>
-        <span class="tech-tag">Power Query</span>
-        <span class="tech-tag">Lenguaje M</span>
-        <span class="tech-tag">Motor VertiPaq</span>
-        <span class="tech-tag">Integración Google Sheets</span>
-        <span class="tech-tag">Conciliación multi-fuente</span>
-        <span class="tech-tag">Lógica de priorización</span>
+        <span class="tech-tag">Power BI</span><span class="tech-tag">Power Query</span><span class="tech-tag">Lenguaje M</span>
+        <span class="tech-tag">Motor VertiPaq</span><span class="tech-tag">Integración Google Sheets</span>
+        <span class="tech-tag">Conciliación multi-fuente</span><span class="tech-tag">Lógica de priorización</span>
       </div>
     </div>
   </div>
 
+  <!-- CASO 3: Reingeniería ETL -->
   <div style="margin-top: 1.5rem;" class="case-card">
     <div class="case-header">
       <div>
@@ -294,7 +549,13 @@
           <span>Empresa sector telecomunicaciones</span>
         </div>
       </div>
-      <div class="result-pill">↓ 92% tiempo de actualización</div>
+      <div class="result-block">
+        <div class="result-pill">↓ 92% tiempo de actualización</div>
+        <div class="progress-wrap">
+          <div class="progress-labels"><span>Antes</span><span>92% reducido</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="92"></div></div>
+        </div>
+      </div>
     </div>
     <div class="case-body">
       <div class="before-after">
@@ -311,9 +572,9 @@
         </div>
       </div>
       <div class="case-problem">
-        <strong>El problema:</strong> El modelo procesaba archivos diarios de órdenes de despacho en dos etapas separadas: un primer .pbix consolidaba el mes en curso y lo exportaba a Excel vía DAX Studio ("Enero.xlsx", "Febrero.xlsx"...), y un segundo .pbix cargaba esos Excel para construir el consolidado anual. Cada semana había que ejecutar ambos en secuencia, exportar manualmente entre ellos, y gestionar la coherencia entre archivos. Con el tiempo, el proceso acumuló deuda técnica: 4 etapas manuales, archivos redundantes y riesgo constante de error humano.
+        <strong>El problema:</strong> El modelo procesaba archivos diarios en dos etapas separadas: un primer .pbix consolidaba el mes y lo exportaba a Excel vía DAX Studio ("Enero.xlsx", "Febrero.xlsx"...), y un segundo .pbix cargaba esos Excel para el consolidado anual. Cada semana había que ejecutar ambos en secuencia, exportar manualmente entre ellos y gestionar coherencia entre archivos.
       </div>
-      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1rem;">La solución reemplazó los dos modelos por un pipeline unificado bajo el concepto de <strong style="color:var(--text)">Única Fuente de la Verdad</strong>. Un motor de reglas de negocio contrasta automáticamente el historial con el estado actual de cada orden: si una orden cambia de estado, el sistema descarta el registro antiguo y conserva el más reciente — sin intervención humana. Se eliminaron DAX Studio, los Excel intermedios y las exportaciones manuales.</p>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1rem;">La solución reemplazó los dos modelos por un pipeline unificado bajo el concepto de <strong style="color:var(--text)">Única Fuente de la Verdad</strong>. Se eliminaron DAX Studio, los Excel intermedios y las exportaciones manuales.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem;">
         <div style="padding:1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;">
           <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-faint);margin-bottom:0.5rem;">Antes — 4 etapas manuales</div>
@@ -321,21 +582,18 @@
         </div>
         <div style="padding:1rem;background:var(--green-light);border:1px solid #A7F3D0;border-radius:8px;">
           <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);margin-bottom:0.5rem;">Después — 0 etapas manuales</div>
-          <div style="font-size:12px;color:var(--text-muted);line-height:1.8;">1. Clic en "Actualizar"<br><br><br><br></div>
+          <div style="font-size:12px;color:var(--text-muted);line-height:1.8;">1. Clic en "Actualizar"</div>
         </div>
       </div>
       <div class="tech-stack">
-        <span class="tech-tag">Power BI</span>
-        <span class="tech-tag">Power Query</span>
-        <span class="tech-tag">Lenguaje M</span>
-        <span class="tech-tag">Motor VertiPaq</span>
-        <span class="tech-tag">Table.Group</span>
-        <span class="tech-tag">Lógica incremental</span>
-        <span class="tech-tag">Sanitización de datos</span>
+        <span class="tech-tag">Power BI</span><span class="tech-tag">Power Query</span><span class="tech-tag">Lenguaje M</span>
+        <span class="tech-tag">Motor VertiPaq</span><span class="tech-tag">Table.Group</span>
+        <span class="tech-tag">Lógica incremental</span><span class="tech-tag">Sanitización de datos</span>
       </div>
     </div>
   </div>
 
+  <!-- CASO 4: Power Query 250 archivos -->
   <div style="margin-top: 1.5rem;" class="case-card">
     <div class="case-header">
       <div>
@@ -346,7 +604,13 @@
           <span>Empresa sector telecomunicaciones</span>
         </div>
       </div>
-      <div class="result-pill">↓ 97% tiempo de proceso</div>
+      <div class="result-block">
+        <div class="result-pill">↓ 97% tiempo de proceso</div>
+        <div class="progress-wrap">
+          <div class="progress-labels"><span>Antes</span><span>97% reducido</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="97"></div></div>
+        </div>
+      </div>
     </div>
     <div class="case-body">
       <div class="before-after">
@@ -367,16 +631,14 @@
       </div>
       <p style="font-size:14px;color:var(--text-muted);line-height:1.7;">La solución detecta y corrige automáticamente los registros con error, consolida 250+ archivos desde carpeta, aplica joins entre cuatro fuentes distintas y genera la tabla maestra lista para Power BI — sin intervención manual en los datos.</p>
       <div class="tech-stack">
-        <span class="tech-tag">Power Query</span>
-        <span class="tech-tag">Lenguaje M</span>
-        <span class="tech-tag">Power BI</span>
-        <span class="tech-tag">Folder.Files</span>
-        <span class="tech-tag">Table.NestedJoin</span>
+        <span class="tech-tag">Power Query</span><span class="tech-tag">Lenguaje M</span><span class="tech-tag">Power BI</span>
+        <span class="tech-tag">Folder.Files</span><span class="tech-tag">Table.NestedJoin</span>
         <span class="tech-tag">Corrección de errores en origen</span>
       </div>
     </div>
   </div>
 
+  <!-- CASO 5: Apps Script Aplicación Pagos -->
   <div style="margin-top: 1.5rem;" class="case-card">
     <div class="case-header">
       <div>
@@ -387,14 +649,20 @@
           <span>Empresa sector Factoring</span>
         </div>
       </div>
-      <div class="result-pill">0 digitación manual</div>
+      <div class="result-block">
+        <div class="result-pill">0 digitación manual</div>
+        <div class="progress-wrap">
+          <div class="progress-labels"><span>Antes</span><span>100% automatizado</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="100"></div></div>
+        </div>
+      </div>
     </div>
     <div class="case-body">
       <div class="before-after">
         <div class="ba-box">
           <div class="ba-label before">Antes</div>
           <div class="ba-value" style="color:var(--text-muted)">Manual</div>
-          <div class="ba-desc">Cada correo de pago se leía, se buscaba el documento en la cartera y se registraba a mano en la planilla.</div>
+          <div class="ba-desc">Cada correo de pago se leía, se buscaba el documento en la cartera y se registraba a mano.</div>
         </div>
         <div class="ba-arrow">→</div>
         <div class="ba-box after">
@@ -404,35 +672,33 @@
         </div>
       </div>
       <div class="case-problem">
-        <strong>El problema:</strong> El equipo de factoring recibía diariamente correos con asunto "pago deudor" o "pago cliente" informando abonos a documentos de la cartera. Para cada correo había que leer el monto y los números de documento, buscarlos manualmente en el informe de cartera del día (un Excel con cientos de filas), verificar si el pago era total o parcial, y registrar el resultado con banco, tipo de pago y estado en una planilla de conciliación. Un proceso tedioso, propenso a errores y que consumía tiempo valioso del equipo de operaciones cada día.
+        <strong>El problema:</strong> El equipo recibía diariamente correos informando abonos a documentos de cartera. Para cada correo había que buscar el documento en el informe del día (cientos de filas), verificar si el pago era total o parcial, y registrar el resultado con banco, tipo de pago y estado. Un proceso tedioso, propenso a errores y que consumía tiempo valioso cada día.
       </div>
-      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">El script automatiza el ciclo completo: busca en Gmail los correos del día que contengan instrucciones de pago, carga el Informe de Cartera AM desde la carpeta del día en Google Drive (navegando automáticamente la estructura <code style="font-size:12px;background:var(--bg);padding:2px 5px;border-radius:3px;">año/mes/día</code>), extrae los documentos mencionados en el cuerpo o adjuntos Excel del correo, los cruza con la cartera usando una cascada de 4 filtros de desempate (número de documento → deudor → cliente → valor), calcula el tipo de pago comparando la deuda con el monto abonado y la fecha de vencimiento, y escribe todo en la hoja de salida con colores de alerta diferenciados.</p>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">El script automatiza el ciclo completo: busca correos en Gmail, carga el Informe de Cartera del día desde Drive, cruza documentos con una cascada de 4 filtros de desempate, calcula el tipo de pago comparando deuda vs monto abonado, y escribe en la hoja con colores de alerta diferenciados.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:1.25rem;">
         <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
-          🔍 <strong style="color:var(--text)">Cascada de desempate inteligente</strong><br>Si un número de documento aparece en múltiples registros de cartera, desempata por deudor, cliente y valor exacto antes de marcar como ambiguo
+          🔍 <strong style="color:var(--text)">Desempate inteligente</strong><br>Cascada de 4 filtros: nº doc → deudor → cliente → valor exacto
         </div>
         <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
-          📎 <strong style="color:var(--text)">Lectura de adjuntos Excel en memoria</strong><br>Si el correo trae un Excel adjunto en vez de documentos en el cuerpo, lo convierte a Google Sheets temporalmente, lee las filas y lo elimina
+          📎 <strong style="color:var(--text)">Lectura de adjuntos Excel</strong><br>Convierte xlsx a GSheets en memoria, lee filas y lo elimina
         </div>
         <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
-          🎨 <strong style="color:var(--text)">Alertas visuales por estado</strong><br>Rojo para correos sin datos claros, naranja para abonos de días anteriores, salmón para documentos no encontrados, amarillo para ambigüedades
+          🎨 <strong style="color:var(--text)">Alertas visuales</strong><br>Rojo, naranja, salmón y amarillo según tipo de excepción detectada
         </div>
         <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
-          🔄 <strong style="color:var(--text)">Control de reprocesamiento</strong><br>Registra qué correos ya se procesaron en el día para que cada ejecución solo agregue los nuevos, sin duplicar filas
+          🔄 <strong style="color:var(--text)">Sin duplicados</strong><br>Registra correos procesados para que cada ejecución solo agregue los nuevos
         </div>
       </div>
       <div class="tech-stack">
-        <span class="tech-tag">Google Apps Script</span>
-        <span class="tech-tag">Gmail API</span>
-        <span class="tech-tag">Google Drive API</span>
-        <span class="tech-tag">Google Sheets</span>
-        <span class="tech-tag">Conversión xlsx → GSheets</span>
-        <span class="tech-tag">Trigger automático diario</span>
+        <span class="tech-tag">Google Apps Script</span><span class="tech-tag">Gmail API</span>
+        <span class="tech-tag">Google Drive API</span><span class="tech-tag">Google Sheets</span>
+        <span class="tech-tag">Conversión xlsx → GSheets</span><span class="tech-tag">Trigger automático diario</span>
         <span class="tech-tag">Lógica de desempate multi-filtro</span>
       </div>
     </div>
   </div>
 
+  <!-- CASO 6: Apps Script Operaciones -->
   <div style="margin-top: 1.5rem;" class="case-card">
     <div class="case-header">
       <div>
@@ -443,39 +709,41 @@
           <span>Empresa sector Factoring</span>
         </div>
       </div>
-      <div class="result-pill">Cada 5 min · automático</div>
+      <div class="result-block">
+        <div class="result-pill">Cada 5 min · automático</div>
+        <div class="progress-wrap">
+          <div class="progress-labels"><span>Antes ~20 min</span><span>75% reducido</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="75"></div></div>
+        </div>
+      </div>
     </div>
     <div class="case-body">
       <div class="before-after">
         <div class="ba-box">
           <div class="ba-label before">Antes</div>
           <div class="ba-value" style="color:var(--text-muted)">~15–20 min</div>
-          <div class="ba-desc">Por cada operación: abrir el correo, identificar la Carta Guía, extraer datos, rellenar la planilla a mano.</div>
+          <div class="ba-desc">Por cada operación: abrir correo, identificar Carta Guía, extraer datos, rellenar planilla a mano.</div>
         </div>
         <div class="ba-arrow">→</div>
         <div class="ba-box after">
           <div class="ba-label after">Después</div>
           <div class="ba-value" style="color:var(--green)">&lt; 5 min</div>
-          <div class="ba-desc">El script detecta el correo, lee la Carta Guía, selecciona la plantilla correcta y genera el xlsx listo.</div>
+          <div class="ba-desc">El script detecta el correo, lee la Carta Guía, selecciona la plantilla y genera el xlsx listo.</div>
         </div>
       </div>
       <div class="case-problem">
-        <strong>El problema:</strong> Cada vez que un ejecutivo enviaba una instrucción de "favor cursar operación" al equipo de operaciones, alguien debía abrir el correo, identificar cuál de los adjuntos Excel era la Carta Guía, extraer manualmente los datos (cliente, RUT, tipo de operación, cesión, banco, montos, fechas de documentos), determinar qué plantilla de planilla correspondía según el producto (Factoring, Pronto Pago, Confirming, Estado de Pago, etc. — más de 15 combinaciones posibles), y rellenar la planilla campo por campo. Con varias operaciones al día, esto consumía tiempo significativo del equipo de operaciones en trabajo mecánico.
+        <strong>El problema:</strong> Cada instrucción de "favor cursar operación" requería abrir el correo, identificar cuál adjunto Excel era la Carta Guía, extraer datos manualmente (cliente, RUT, tipo de operación, cesión, banco, montos, fechas), elegir entre más de 15 plantillas según el producto, y rellenar campo por campo. Con varias operaciones al día, el tiempo consumido en trabajo mecánico era significativo.
       </div>
-      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">El script se ejecuta cada 5 minutos buscando correos nuevos sin procesar. Cuando detecta uno válido, identifica la Carta Guía entre los adjuntos Excel mediante un sistema de puntuación sobre la estructura interna del archivo (presencia de hoja "Carta Guía", campos de cabecera, campos de nómina), lee todos los datos relevantes, determina la plantilla correcta según tipo de operación y cesión, la rellena automáticamente y guarda el xlsx en una carpeta de Drive organizada por operación. Para Confirming sin Carta Guía Excel, extrae los datos directamente de la tabla HTML del cuerpo del correo.</p>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">El script corre cada 5 minutos, detecta correos nuevos, identifica la Carta Guía mediante scoring interno, determina la plantilla correcta y la rellena automáticamente. Para Confirming sin Carta Guía Excel, extrae datos de la tabla HTML del cuerpo del correo.</p>
       <div style="font-size:13px;color:var(--text-muted);line-height:1.6;padding:10px 14px;background:var(--amber-light);border:1px solid #FDE68A;border-radius:6px;margin-bottom:1.25rem;">
-        <strong style="color:var(--amber)">Detalle técnico destacado:</strong> El sistema de identificación de Carta Guía usa scoring interno — abre cada Excel adjunto, cuenta campos de cabecera reconocidos (+2 pts cada uno), detecta si tiene una hoja llamada "Carta Guía" (+10 pts), penaliza si parece una nómina de facturas sin cabecera (-5 pts), y elige el de mayor puntaje. Si ninguno alcanza el umbral mínimo, intenta por nombre de archivo y como fallback usa el de más filas. El script también normaliza automáticamente nombres de banco (30+ variantes → nombre oficial) y tipos de cuenta, generando alertas en una hoja separada dentro de la planilla para los valores que requieren revisión manual.
+        <strong style="color:var(--amber)">Detalle técnico:</strong> Sistema de scoring: +10 pts si el Excel tiene hoja "Carta Guía", +2 pts por campo de cabecera reconocido, -5 pts si parece nómina sin cabecera. Normaliza 30+ variantes de nombres de banco al nombre oficial y genera hoja de alertas en la planilla para valores que requieren revisión manual.
       </div>
       <div class="tech-stack">
-        <span class="tech-tag">Google Apps Script</span>
-        <span class="tech-tag">Gmail API</span>
-        <span class="tech-tag">Google Drive API v3</span>
-        <span class="tech-tag">Google Sheets</span>
-        <span class="tech-tag">Scoring de estructura Excel</span>
-        <span class="tech-tag">Parsing HTML de correos</span>
-        <span class="tech-tag">15+ plantillas de productos</span>
-        <span class="tech-tag">Trigger cada 5 minutos</span>
-        <span class="tech-tag">Normalización de datos bancarios</span>
+        <span class="tech-tag">Google Apps Script</span><span class="tech-tag">Gmail API</span>
+        <span class="tech-tag">Google Drive API v3</span><span class="tech-tag">Google Sheets</span>
+        <span class="tech-tag">Scoring de estructura Excel</span><span class="tech-tag">Parsing HTML</span>
+        <span class="tech-tag">15+ plantillas de productos</span><span class="tech-tag">Trigger cada 5 minutos</span>
+        <span class="tech-tag">Normalización datos bancarios</span>
       </div>
     </div>
   </div>
@@ -506,6 +774,23 @@
       <div class="service-name">Diagnóstico de procesos</div>
       <div class="service-desc">Identifico los puntos de mayor pérdida de tiempo en tu operación y te entrego un plan de automatización priorizado.</div>
       <div class="service-tools">30 min · Sin costo · Sin compromiso</div>
+    </div>
+  </div>
+
+  <!-- STACK VISUAL DE TECNOLOGÍAS -->
+  <div class="stack-visual">
+    <div class="stack-visual-label">Tecnologías que uso</div>
+    <div class="stack-grid">
+      <div class="stack-item"><span class="stack-icon">🐍</span> Python</div>
+      <div class="stack-item"><span class="stack-icon">📊</span> Power BI</div>
+      <div class="stack-item"><span class="stack-icon">⚡</span> Power Automate</div>
+      <div class="stack-item"><span class="stack-icon">🔄</span> Power Query</div>
+      <div class="stack-item"><span class="stack-icon">🗄️</span> SQL</div>
+      <div class="stack-item"><span class="stack-icon">📋</span> Google Sheets</div>
+      <div class="stack-item"><span class="stack-icon">☁️</span> Google Apps Script</div>
+      <div class="stack-item"><span class="stack-icon">📧</span> Automatización Outlook</div>
+      <div class="stack-item"><span class="stack-icon">🐼</span> Pandas</div>
+      <div class="stack-item"><span class="stack-icon">🔒</span> FTP / SFTP</div>
     </div>
   </div>
 </section>
@@ -541,7 +826,7 @@
 <div id="contacto" class="cta-section">
   <h2>¿Tu equipo pierde horas en procesos manuales?</h2>
   <a href="https://wa.me/56979580757?" class="btn-cta" target="_blank">Agendar diagnóstico gratuito</a>
-  <p class="cta-note">O escríbeme a <a href="mailto:kendercontreras@gmail.com" style="color:#6B7280">kendercontreras@gmail.com</a>
+  <p class="cta-note">O escríbeme a <a href="mailto:kendercontreras@gmail.com" style="color:#6B7280">kendercontreras@gmail.com</a></p>
   <p class="cta-note">Sin costo · Sin compromiso · Respuesta en menos de 24 horas</p>
 </div>
 
@@ -552,6 +837,108 @@
     <a href="https://github.com/Kendercontreras" target="_blank">GitHub</a>
   </div>
 </footer>
+
+<script>
+// ── 1. CONTADOR ANIMADO EN EL HERO ──
+(function() {
+  const stages = [
+    { from: '7 días', to: '1 hora' },
+    { from: '6 días', to: '1 hora' },
+    { from: '5 días', to: '1 hora' },
+    { from: '4 días', to: '1 hora' },
+    { from: '3 días', to: '1 hora' },
+    { from: '2 días', to: '1 hora' },
+    { from: '1 día',  to: '1 hora' },
+  ];
+  const el = document.getElementById('counterFrom');
+  if (!el) return;
+  let i = 0;
+  const interval = setInterval(() => {
+    i++;
+    if (i >= stages.length) { clearInterval(interval); return; }
+    el.classList.add('counting');
+    setTimeout(() => {
+      el.textContent = stages[i].from;
+      el.classList.remove('counting');
+    }, 150);
+  }, 320);
+})();
+
+// ── 2. DASHBOARD — KPIs animados + barras ──
+(function() {
+  function animateCount(el, target, duration, suffix) {
+    let start = 0, step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start = Math.min(start + step, target);
+      el.innerHTML = Math.round(start) + (suffix || '');
+      if (start >= target) clearInterval(timer);
+    }, 16);
+  }
+
+  const dashboard = document.querySelector('.dashboard-wrap');
+  if (!dashboard) return;
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      obs.unobserve(entry.target);
+
+      // KPIs
+      const k1 = document.getElementById('kpi1');
+      const k2 = document.getElementById('kpi2');
+      const k3 = document.getElementById('kpi3');
+      const k4 = document.getElementById('kpi4');
+      if (k1) animateCount(k1, 3, 1200, '+');
+      if (k2) setTimeout(() => {
+        k2.innerHTML = '0<span style="font-size:1.2rem">%</span>';
+        let v = 0;
+        const t = setInterval(() => {
+          v = Math.min(v + 1.5, 97);
+          k2.innerHTML = Math.round(v) + '<span style="font-size:1.2rem">%</span>';
+          if (v >= 97) clearInterval(t);
+        }, 16);
+      }, 200);
+      if (k3) setTimeout(() => animateCount(k3, 6, 800), 400);
+      if (k4) setTimeout(() => animateCount(k4, 13, 900), 600);
+
+      // Barras del chart
+      setTimeout(() => {
+        document.querySelectorAll('.dash-bar-before').forEach(b => {
+          b.style.width = b.style.getPropertyValue('--w') || b.getAttribute('style').match(/--w:([^;]+)/)?.[1] || '0%';
+        });
+        document.querySelectorAll('.dash-bar-after').forEach(b => {
+          b.style.width = b.style.getPropertyValue('--w') || b.getAttribute('style').match(/--w:([^;]+)/)?.[1] || '0%';
+        });
+        // Tool fills
+        document.querySelectorAll('.dash-tool-fill[data-w]').forEach(f => {
+          f.style.width = f.getAttribute('data-w') + '%';
+        });
+      }, 300);
+    });
+  }, { threshold: 0.2 });
+
+  obs.observe(dashboard);
+})();
+
+// ── 3. BARRAS DE PROGRESO — se animan al hacer scroll ──
+(function() {
+  const fills = document.querySelectorAll('.progress-fill[data-width]');
+  if (!fills.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const w = el.getAttribute('data-width');
+        setTimeout(() => { el.style.width = w + '%'; }, 100);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  fills.forEach(f => observer.observe(f));
+})();
+</script>
 
 </body>
 </html>
