@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kender Contreras · Consultor de Automatización de Procesos</title>
-<meta name="description" content="Consultor de automatización de procesos en Santiago, Chile. Power BI, Power Automate, Python y SQL para eliminar trabajo manual en PYMEs.">
+<meta name="description" content="Consultor de automatización de procesos en Santiago, Chile. Power BI, Power Automate, Python, Google App Script y SQL para eliminar trabajo manual en PYMEs.">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -140,7 +140,7 @@
   <div class="hero-eyebrow">Consultor de Automatización de Procesos · Santiago, Chile</div>
   <h1>Menos trabajo manual.<br><em>Más tiempo</em> para lo que importa.</h1>
   <p class="hero-desc">
-    Transformo procesos repetitivos en flujos automatizados usando <strong>Power BI, Power Automate, Python y SQL</strong> — para que tu equipo deje de perder horas en tareas repetitivas y se enfoque en lo que realmente genera valor.
+    Transformo procesos repetitivos en flujos automatizados usando <strong>Power BI, Power Automate, Python, Google App Script y SQL</strong> — para que tu equipo deje de perder horas en tareas repetitivas y se enfoque en lo que realmente genera valor.
   </p>
   <div class="hero-actions">
     <a href="#contacto" class="btn-primary">Diagnóstico gratuito (30 min)</a>
@@ -157,16 +157,16 @@
 <div class="metrics">
   <div class="metrics-inner">
     <div class="metric-item">
-      <div class="metric-num amber">97%</div>
-      <div class="metric-label">Reducción en tiempo de procesamiento en el proyecto más reciente</div>
+      <div class="metric-num amber">6</div>
+      <div class="metric-label">Proyectos reales documentados en telecomunicaciones y factoring</div>
     </div>
     <div class="metric-item">
-      <div class="metric-num blue">250+</div>
-      <div class="metric-label">Archivos diarios consolidados automáticamente por año</div>
+      <div class="metric-num blue">+3 hrs</div>
+      <div class="metric-label">diarias liberadas en el proyecto de mayor impacto operacional</div>
     </div>
     <div class="metric-item">
-      <div class="metric-num green">0 hrs</div>
-      <div class="metric-label">de trabajo manual en procesos ya automatizados</div>
+      <div class="metric-num green">97%</div>
+      <div class="metric-label">Reducción promedio de tiempo en procesos automatizados</div>
     </div>
   </div>
 </div>
@@ -181,45 +181,110 @@
   <div class="case-card">
     <div class="case-header">
       <div>
-        <div class="case-tag">Automatización · Telecomunicaciones</div>
-        <div class="case-title">Consolidación anual de 250 archivos operacionales para reportes corporativos</div>
+        <div class="case-tag">Automatización RPA · Python · Telecomunicaciones</div>
+        <div class="case-title">Orquestador de tareas diarias: 13 scripts que reemplazan<br>más de 3 horas de trabajo manual cada día</div>
         <div class="case-meta">
-          <span>Power BI · Power Query · Lenguaje M</span>
+          <span>Python · win32com · paramiko · pandas · Outlook · FTP/SFTP</span>
           <span>Empresa sector telecomunicaciones</span>
         </div>
       </div>
-      <div class="result-pill">↓ 97% tiempo de proceso</div>
+      <div class="result-pill">+3 hrs/día liberadas</div>
     </div>
     <div class="case-body">
       <div class="before-after">
         <div class="ba-box">
           <div class="ba-label before">Antes</div>
-          <div class="ba-value" style="color:var(--text-muted)">~1 semana</div>
-          <div class="ba-desc">Consolidación manual en Excel. Proceso se degradaba con el tiempo a medida que crecía el volumen.</div>
+          <div class="ba-value" style="color:var(--text-muted)">>3 hrs/día</div>
+          <div class="ba-desc">Una persona ejecutaba manualmente cada tarea: descargas, filtros, registros en Excel, respuestas por correo.</div>
         </div>
         <div class="ba-arrow">→</div>
         <div class="ba-box after">
           <div class="ba-label after">Después</div>
-          <div class="ba-value" style="color:var(--green)">< 1 hora</div>
-          <div class="ba-desc">Pipeline automatizado en Power Query. Actualización con un clic. Tiempo constante sin importar el volumen.</div>
+          <div class="ba-value" style="color:var(--green)">0 intervención</div>
+          <div class="ba-desc">El orquestador ejecuta todos los procesos en horario programado. La persona recibe los resultados listos.</div>
         </div>
       </div>
       <div class="case-problem">
-        <strong>El problema:</strong> Los archivos diarios llegaban con errores estructurales desde el sistema de extracción. El proceso manual en Excel escalaba con el volumen: más archivos, más horas. Al segundo semestre, el informe consumía una semana completa de trabajo dedicado.
+        <strong>El problema:</strong> El equipo de operaciones dedicaba más de 3 horas diarias a una secuencia fija de tareas repetitivas: conectarse a servidores FTP y SFTP para descargar reportes, escanear la bandeja de Outlook para extraer archivos adjuntos de correos específicos, actualizar modelos de Power Query en Excel, registrar solicitudes de anulación detectando órdenes en el cuerpo de correos, y generar y enviar reportes diarios con tablas pegadas directamente en el correo. Cada tarea dependía de que la anterior estuviera completa — y todas requerían presencia humana.
       </div>
-      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;">La solución detecta y corrige automáticamente los registros con error, consolida 250+ archivos desde carpeta, aplica joins entre cuatro fuentes distintas y genera la tabla maestra lista para Power BI — sin intervención manual en los datos.</p>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">Diseñé un sistema de 13 scripts Python independientes, cada uno responsable de una tarea específica, unificados en un orquestador central que los ejecuta en secuencia y en horario automático. Los scripts cubren:</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:1.25rem;">
+        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+          📥 <strong style="color:var(--text)">Descargas FTP/SFTP</strong><br>Extracción automática de reportes desde servidores remotos con lógica delta (solo archivos nuevos)
+        </div>
+        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+          📧 <strong style="color:var(--text)">Monitoreo de Outlook</strong><br>Escaneo de bandeja, extracción de adjuntos y marcado de correos leídos por remitente y asunto
+        </div>
+        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+          🤖 <strong style="color:var(--text)">Gestión inteligente de anulaciones</strong><br>Detecta órdenes en el cuerpo de correos con regex, clasifica el motivo con diccionario de reglas y responde automáticamente
+        </div>
+        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+          📊 <strong style="color:var(--text)">Actualización y despacho de reportes</strong><br>Refresca Power Query en Excel, actualiza tablas dinámicas y genera el correo diario con las tablas pegadas
+        </div>
+      </div>
+
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.6;padding:10px 14px;background:var(--amber-light);border:1px solid #FDE68A;border-radius:6px;margin-bottom:1.25rem;">
+        <strong style="color:var(--amber)">Detalle técnico destacado:</strong> El script de gestión de anulaciones usa expresiones regulares para extraer números de orden del cuerpo del correo, aplica lógica de contexto para descartar órdenes que "ya avanzaron" (no deben anularse), clasifica el motivo automáticamente con un diccionario de 30+ reglas de negocio, registra en Excel y genera una respuesta personalizada por nombre — todo sin intervención humana.
+      </p>
+
       <div class="tech-stack">
-        <span class="tech-tag">Power Query</span>
-        <span class="tech-tag">Lenguaje M</span>
-        <span class="tech-tag">Power BI</span>
-        <span class="tech-tag">Folder.Files</span>
-        <span class="tech-tag">Table.NestedJoin</span>
-        <span class="tech-tag">Corrección de errores en origen</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">win32com</span>
+        <span class="tech-tag">paramiko (SFTP)</span>
+        <span class="tech-tag">ftplib (FTP)</span>
+        <span class="tech-tag">pandas</span>
+        <span class="tech-tag">Automatización Outlook</span>
+        <span class="tech-tag">Automatización Excel</span>
+        <span class="tech-tag">Regex</span>
+        <span class="tech-tag">Orquestador con scheduler</span>
       </div>
     </div>
   </div>
 
-   <div style="margin-top: 1.5rem;" class="case-card">
+  <div style="margin-top: 1.5rem;" class="case-card">
+    <div class="case-header">
+      <div>
+        <div class="case-tag">Conciliación financiera · Factoring</div>
+        <div class="case-title">Conciliación de cartera y cuentas por cobrar/pagar:<br>de fórmulas anidadas en Excel a un modelo en memoria</div>
+        <div class="case-meta">
+          <span>Power BI · Power Query · Lenguaje M · 8 fuentes de datos</span>
+          <span>Empresa sector Factoring</span>
+        </div>
+      </div>
+      <div class="result-pill">↓ 98% tiempo de proceso</div>
+    </div>
+    <div class="case-body">
+      <div class="before-after">
+        <div class="ba-box">
+          <div class="ba-label before">Antes</div>
+          <div class="ba-value" style="color:var(--text-muted)">3–4 hrs/día</div>
+          <div class="ba-desc">Conciliación diaria manual con BUSCARV/XLOOKUP anidados sobre 8 fuentes distintas.</div>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-box after">
+          <div class="ba-label after">Después</div>
+          <div class="ba-value" style="color:var(--green)">&lt; 3 min</div>
+          <div class="ba-desc">Procesamiento automático en memoria. Mismo resultado, sin digitación.</div>
+        </div>
+      </div>
+      <div class="case-problem">
+        <strong>El problema:</strong> El proceso conciliaba diariamente lo que la empresa debía cobrar y pagar (Factoring y Confirming) contra lo efectivamente procesado en bancos y gestiones comerciales — cruzando <strong>8 fuentes de datos distintas</strong> entre archivos locales y planillas en Google Sheets. Hacerlo en Excel significaba abrir los 8 archivos, construir llaves compuestas manuales (RUT + monto + número de cuenta) limpiando espacios uno por uno, y escribir fórmulas anidadas con múltiples condiciones para decidir qué justificación de pago aplicaba primero. Con miles de filas, Excel se volvía lento, se congelaba, y el riesgo de error de digitación era constante.
+      </div>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1rem;">La solución migró toda la lógica a Power BI, consolidando las 8 fuentes —locales y en la nube— en un solo modelo. El motor procesa miles de filas en memoria RAM, aplicando automáticamente las reglas de prioridad de justificación de pago (gestiones de ingreso, condonaciones, neteos, operaciones de mesa en CLP y USD). Cuando la regla de negocio cambia, se actualiza en una sola línea de código M en vez de reescribir fórmulas en miles de celdas.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">Power Query</span>
+        <span class="tech-tag">Lenguaje M</span>
+        <span class="tech-tag">Motor VertiPaq</span>
+        <span class="tech-tag">Integración Google Sheets</span>
+        <span class="tech-tag">Conciliación multi-fuente</span>
+        <span class="tech-tag">Lógica de priorización</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 1.5rem;" class="case-card">
     <div class="case-header">
       <div>
         <div class="case-tag">Reingeniería ETL · Telecomunicaciones · Logística</div>
@@ -271,6 +336,150 @@
     </div>
   </div>
 
+  <div style="margin-top: 1.5rem;" class="case-card">
+    <div class="case-header">
+      <div>
+        <div class="case-tag">Automatización · Telecomunicaciones</div>
+        <div class="case-title">Consolidación anual de 250 archivos operacionales para reportes DEM Corporate</div>
+        <div class="case-meta">
+          <span>Power BI · Power Query · Lenguaje M</span>
+          <span>Empresa sector telecomunicaciones</span>
+        </div>
+      </div>
+      <div class="result-pill">↓ 97% tiempo de proceso</div>
+    </div>
+    <div class="case-body">
+      <div class="before-after">
+        <div class="ba-box">
+          <div class="ba-label before">Antes</div>
+          <div class="ba-value" style="color:var(--text-muted)">~1 semana</div>
+          <div class="ba-desc">Consolidación manual en Excel. Proceso se degradaba con el tiempo a medida que crecía el volumen.</div>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-box after">
+          <div class="ba-label after">Después</div>
+          <div class="ba-value" style="color:var(--green)">< 1 hora</div>
+          <div class="ba-desc">Pipeline automatizado en Power Query. Actualización con un clic. Tiempo constante sin importar el volumen.</div>
+        </div>
+      </div>
+      <div class="case-problem">
+        <strong>El problema:</strong> Los archivos diarios llegaban con errores estructurales desde el sistema de extracción — múltiples campos colapsados en una sola columna. El proceso manual en Excel escalaba con el volumen: más archivos, más horas. Al segundo semestre, el informe consumía una semana completa de trabajo dedicado.
+      </div>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;">La solución detecta y corrige automáticamente los registros con error, consolida 250+ archivos desde carpeta, aplica joins entre cuatro fuentes distintas y genera la tabla maestra lista para Power BI — sin intervención manual en los datos.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Power Query</span>
+        <span class="tech-tag">Lenguaje M</span>
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">Folder.Files</span>
+        <span class="tech-tag">Table.NestedJoin</span>
+        <span class="tech-tag">Corrección de errores en origen</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 1.5rem;" class="case-card">
+    <div class="case-header">
+      <div>
+        <div class="case-tag">Automatización Gmail · Google Apps Script · Factoring</div>
+        <div class="case-title">Aplicación de pagos automática: de correos de Gmail<br>a cartera conciliada sin intervención humana</div>
+        <div class="case-meta">
+          <span>Google Apps Script · Gmail API · Google Drive · Google Sheets</span>
+          <span>Empresa sector Factoring</span>
+        </div>
+      </div>
+      <div class="result-pill">0 digitación manual</div>
+    </div>
+    <div class="case-body">
+      <div class="before-after">
+        <div class="ba-box">
+          <div class="ba-label before">Antes</div>
+          <div class="ba-value" style="color:var(--text-muted)">Manual</div>
+          <div class="ba-desc">Cada correo de pago se leía, se buscaba el documento en la cartera y se registraba a mano en la planilla.</div>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-box after">
+          <div class="ba-label after">Después</div>
+          <div class="ba-value" style="color:var(--green)">Automático</div>
+          <div class="ba-desc">El script lee Gmail, cruza con la cartera del día en Drive y escribe el resultado en Sheets — solo.</div>
+        </div>
+      </div>
+      <div class="case-problem">
+        <strong>El problema:</strong> El equipo de factoring recibía diariamente correos con asunto "pago deudor" o "pago cliente" informando abonos a documentos de la cartera. Para cada correo había que leer el monto y los números de documento, buscarlos manualmente en el informe de cartera del día (un Excel con cientos de filas), verificar si el pago era total o parcial, y registrar el resultado con banco, tipo de pago y estado en una planilla de conciliación. Un proceso tedioso, propenso a errores y que consumía tiempo valioso del equipo de operaciones cada día.
+      </div>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">El script automatiza el ciclo completo: busca en Gmail los correos del día que contengan instrucciones de pago, carga el Informe de Cartera AM desde la carpeta del día en Google Drive (navegando automáticamente la estructura <code style="font-size:12px;background:var(--bg);padding:2px 5px;border-radius:3px;">año/mes/día</code>), extrae los documentos mencionados en el cuerpo o adjuntos Excel del correo, los cruza con la cartera usando una cascada de 4 filtros de desempate (número de documento → deudor → cliente → valor), calcula el tipo de pago comparando la deuda con el monto abonado y la fecha de vencimiento, y escribe todo en la hoja de salida con colores de alerta diferenciados.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:1.25rem;">
+        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+          🔍 <strong style="color:var(--text)">Cascada de desempate inteligente</strong><br>Si un número de documento aparece en múltiples registros de cartera, desempata por deudor, cliente y valor exacto antes de marcar como ambiguo
+        </div>
+        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+          📎 <strong style="color:var(--text)">Lectura de adjuntos Excel en memoria</strong><br>Si el correo trae un Excel adjunto en vez de documentos en el cuerpo, lo convierte a Google Sheets temporalmente, lee las filas y lo elimina
+        </div>
+        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+          🎨 <strong style="color:var(--text)">Alertas visuales por estado</strong><br>Rojo para correos sin datos claros, naranja para abonos de días anteriores, salmón para documentos no encontrados, amarillo para ambigüedades
+        </div>
+        <div style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">
+          🔄 <strong style="color:var(--text)">Control de reprocesamiento</strong><br>Registra qué correos ya se procesaron en el día para que cada ejecución solo agregue los nuevos, sin duplicar filas
+        </div>
+      </div>
+      <div class="tech-stack">
+        <span class="tech-tag">Google Apps Script</span>
+        <span class="tech-tag">Gmail API</span>
+        <span class="tech-tag">Google Drive API</span>
+        <span class="tech-tag">Google Sheets</span>
+        <span class="tech-tag">Conversión xlsx → GSheets</span>
+        <span class="tech-tag">Trigger automático diario</span>
+        <span class="tech-tag">Lógica de desempate multi-filtro</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 1.5rem;" class="case-card">
+    <div class="case-header">
+      <div>
+        <div class="case-tag">Automatización operacional · Google Apps Script · Factoring</div>
+        <div class="case-title">Pipeline de operaciones de factoring: de correo recibido<br>a planilla de curse lista en 5 minutos</div>
+        <div class="case-meta">
+          <span>Google Apps Script · Gmail API · Google Drive · Google Sheets · Drive API v3</span>
+          <span>Empresa sector Factoring</span>
+        </div>
+      </div>
+      <div class="result-pill">Cada 5 min · automático</div>
+    </div>
+    <div class="case-body">
+      <div class="before-after">
+        <div class="ba-box">
+          <div class="ba-label before">Antes</div>
+          <div class="ba-value" style="color:var(--text-muted)">~15–20 min</div>
+          <div class="ba-desc">Por cada operación: abrir el correo, identificar la Carta Guía, extraer datos, rellenar la planilla a mano.</div>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-box after">
+          <div class="ba-label after">Después</div>
+          <div class="ba-value" style="color:var(--green)">&lt; 5 min</div>
+          <div class="ba-desc">El script detecta el correo, lee la Carta Guía, selecciona la plantilla correcta y genera el xlsx listo.</div>
+        </div>
+      </div>
+      <div class="case-problem">
+        <strong>El problema:</strong> Cada vez que un ejecutivo enviaba una instrucción de "favor cursar operación" al equipo de operaciones, alguien debía abrir el correo, identificar cuál de los adjuntos Excel era la Carta Guía, extraer manualmente los datos (cliente, RUT, tipo de operación, cesión, banco, montos, fechas de documentos), determinar qué plantilla de planilla correspondía según el producto (Factoring, Pronto Pago, Confirming, Estado de Pago, etc. — más de 15 combinaciones posibles), y rellenar la planilla campo por campo. Con varias operaciones al día, esto consumía tiempo significativo del equipo de operaciones en trabajo mecánico.
+      </div>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">El script se ejecuta cada 5 minutos buscando correos nuevos sin procesar. Cuando detecta uno válido, identifica la Carta Guía entre los adjuntos Excel mediante un sistema de puntuación sobre la estructura interna del archivo (presencia de hoja "Carta Guía", campos de cabecera, campos de nómina), lee todos los datos relevantes, determina la plantilla correcta según tipo de operación y cesión, la rellena automáticamente y guarda el xlsx en una carpeta de Drive organizada por operación. Para Confirming sin Carta Guía Excel, extrae los datos directamente de la tabla HTML del cuerpo del correo.</p>
+      <div style="font-size:13px;color:var(--text-muted);line-height:1.6;padding:10px 14px;background:var(--amber-light);border:1px solid #FDE68A;border-radius:6px;margin-bottom:1.25rem;">
+        <strong style="color:var(--amber)">Detalle técnico destacado:</strong> El sistema de identificación de Carta Guía usa scoring interno — abre cada Excel adjunto, cuenta campos de cabecera reconocidos (+2 pts cada uno), detecta si tiene una hoja llamada "Carta Guía" (+10 pts), penaliza si parece una nómina de facturas sin cabecera (-5 pts), y elige el de mayor puntaje. Si ninguno alcanza el umbral mínimo, intenta por nombre de archivo y como fallback usa el de más filas. El script también normaliza automáticamente nombres de banco (30+ variantes → nombre oficial) y tipos de cuenta, generando alertas en una hoja separada dentro de la planilla para los valores que requieren revisión manual.
+      </div>
+      <div class="tech-stack">
+        <span class="tech-tag">Google Apps Script</span>
+        <span class="tech-tag">Gmail API</span>
+        <span class="tech-tag">Google Drive API v3</span>
+        <span class="tech-tag">Google Sheets</span>
+        <span class="tech-tag">Scoring de estructura Excel</span>
+        <span class="tech-tag">Parsing HTML de correos</span>
+        <span class="tech-tag">15+ plantillas de productos</span>
+        <span class="tech-tag">Trigger cada 5 minutos</span>
+        <span class="tech-tag">Normalización de datos bancarios</span>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <hr class="section-divider">
@@ -309,10 +518,10 @@
       <div class="about-avatar">KC</div>
       <div class="about-name">Kender Contreras</div>
       <div class="about-title">Consultor de Automatización de Procesos</div>
-      <div class="about-bio">Analista de datos con experiencia en empresas de telecomunicaciones, E-commerce y factoring. Especializado en convertir procesos manuales en flujos automatizados usando herramientas de Microsoft y Python.</div>
+      <div class="about-bio">Analista de datos con experiencia en empresas de telecomunicaciones y factoring. Especializado en convertir procesos manuales en flujos automatizados usando herramientas de Microsoft y Python.</div>
       <div class="about-exp">
         <div class="exp-item">
-          <div class="exp-company">Telecomunicaciones</div>
+          <div class="exp-company">Telefónica Empresas</div>
           <div class="exp-role">Analista de datos</div>
         </div>
         <div class="exp-item">
@@ -327,7 +536,6 @@
       <p style="font-size:15px;color:var(--text-muted);line-height:1.8;font-weight:300;">El resultado es siempre el mismo: <strong style="color:var(--text)">menos horas en tareas mecánicas, más tiempo para las decisiones que importan.</strong></p>
     </div>
   </div>
- 
 </section>
 
 <div id="contacto" class="cta-section">
